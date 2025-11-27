@@ -186,17 +186,17 @@ public class ArrCharOps {
      *         return -2 if there is an error with the input.
      */
     public static int compareTo(String str1, String str2) 
-    {
+   {
     if (str1 == null || str2 == null) {
         return -2;
-    }  
+    }
     int len1 = str1.length();
     int len2 = str2.length();
     int minLen = Math.min(len1, len2); 
     for(int i = 0; i < minLen; i++)
     {
         char char1 = str1.charAt(i);
-        char char2 = str2.charAt(i);
+        char char2 = str2.charAt(i);  
         if(char1 != char2)
         {
             return char1 - char2; 
@@ -207,6 +207,6 @@ public class ArrCharOps {
     if (len1 > len2)
         return 1;
     
-    return 0; 
+    return 0;
 }
 }

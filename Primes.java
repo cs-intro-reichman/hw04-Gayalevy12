@@ -45,7 +45,7 @@ public class Primes {
                 c++;
             }
         }
-        double pc = (double) c / (n - 1) * 100;
+        double pc = (double) c / n * 100;
         System.out.printf("There are %d primes between 2 and %d (%.0f%% are primes)\n", 
                           c, n, pc);
     }

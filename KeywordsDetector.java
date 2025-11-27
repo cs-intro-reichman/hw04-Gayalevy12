@@ -18,9 +18,49 @@ public class KeywordsDetector {
         detectAndPrint(sentences, keywords);
     }
 
+    public static boolean contains(String str1, String str2) 
+    {
+    if (str1 == null || str2 == null || str2.length() > str1.length()) {
+        return false;
+    }
+    if (str2.isEmpty()) {
+        return true;
+    }
+    int n1 = str1.length();
+    int n2 = str2.length();
+    for (int i = 0; i <= n1 - n2; i++) 
+    {
+        boolean isMatch = true;
+        for (int j = 0; j < n2; j++) 
+        {
+            if (str1.charAt(i + j) != str2.charAt(j)) 
+            {
+                isMatch = false;
+            }
+        }
+        if (isMatch) {
+            return true;
+        }
+    }
+    return false;
+}
+
     // Iterates through all the sentences.
     // If a sentence contains one or more of the kewords, prints it.
     public static void detectAndPrint(String[] sentences, String[] keywords) {
+        for(int i=0; i<sentences.length;i++)
+        {
+            String currentS = sentences[i]; 
+            String lowerCaseSentence = currentS.toLowerCase();
+            for(int j=0; j<keywords.length; j++)
+            {
+                String lowerCaseKeyword = keywords[j].toLowerCase(); 
+                if (contains(lowerCaseSentence, lowerCaseKeyword)) {     
+                    System.out.println(currentS);
+                    break;
+            }
+        }
         // Replace this comment with your code
+    }
     }
 }
